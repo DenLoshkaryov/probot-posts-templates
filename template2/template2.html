@@ -5,6 +5,73 @@
     <title>Post template 2</title>
 </head>
 <body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
+    body {
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    #wrapper {
+        margin: 0 auto;
+        max-width: 750px;
+        padding: 16px;
+        border-radius: 15px;
+        background-color: rgba(3, 103, 188, 0.9);
+        display: flex;
+        /*max-height: 600px;*/
+        align-items: center;
+    }
+
+    .post-image {
+        min-width: 250px;
+        flex: 3 1 65%;
+    }
+
+    .post-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .post-text {
+        text-align: justify;
+        font-size: 16px;
+        color: white;
+        min-width: 100px;
+        flex: 1 1 30%;
+        margin-right: 10px;
+    }
+    @media screen and (max-width: 576px) {
+        .post-text {
+            font-size: 12px;
+        }
+    }
+
+
+</style>
+
+<div id="wrapper">
+    <div class="post-text">[postText]</div>
+    <div class="post-image">
+        <img src="[imgSrc]" alt="[imgAlt]">
+    </div>
+
+</div>
+
+<script>
+    var font = document.createElement('link');
+    font.setAttribute('href', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
+    font.setAttribute('rel', 'stylesheet');
+
+    document.querySelector('head').appendChild(font);
+    var wrapper = document.getElementById('wrapper');
+    console.log(wrapper.innerHTML);
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc]', 'Image_Post_02.jpg');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt]', 'Image for post #1');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postText]', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos harum quae totam? Assumenda et inventore molestias necessitatibus qui, repellat reprehenderit vel.');
+</script>
 </body>
 </html>
