@@ -5,73 +5,101 @@
     <title>Post template 2</title>
 </head>
 <body>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
 
-    body {
-        font-family: 'Open Sans', sans-serif;
-    }
+<div data-role="post-content">
 
-    #wrapper {
-        margin: 0 auto;
-        max-width: 750px;
-        padding: 16px;
-        border-radius: 15px;
-        background-color: rgba(3, 103, 188, 0.9);
-        display: flex;
-        /*max-height: 600px;*/
-        align-items: center;
-    }
 
-    .post-image {
-        min-width: 250px;
-        flex: 3 1 65%;
-    }
+    <link rel="stylesheet" href="../libs/scrollbar/perfect-scrollbar.css">
+    <script src="../libs/scrollbar/perfect-scrollbar.min.js"></script>
+    <script>
+        var font = document.createElement('link');
+        font.setAttribute('href', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
+        font.setAttribute('rel', 'stylesheet');
+        document.querySelector('head').appendChild(font);
+    </script>
 
-    .post-image img {
-        width: 100%;
-        height: auto;
-    }
-
-    .post-text {
-        text-align: justify;
-        font-size: 16px;
-        color: white;
-        min-width: 100px;
-        flex: 1 1 30%;
-        margin-right: 10px;
-    }
-    @media screen and (max-width: 576px) {
-        .post-text {
-            font-size: 12px;
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
         }
-    }
 
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
 
-</style>
+        #wrapper {
+            margin: 0 auto;
+            max-width: 750px;
+            padding: 16px;
+            border-radius: 15px;
+            background-color: rgba(3, 103, 188, 0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-<div id="wrapper">
-    <div class="post-text">[postText]</div>
-    <div class="post-image">
-        <img src="[imgSrc]" alt="[imgAlt]">
+        .post-image {
+            flex: 0 0 60%;
+        }
+
+        .post-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .post-text {
+            text-align: left;
+            font-size: 16px;
+            color: white;
+            flex: 0 0 37%;
+            position: relative;
+            padding-right: 10px;
+        }
+
+        @media screen and (max-width: 576px) {
+            .post-text {
+                font-size: 12px;
+            }
+        }
+    </style>
+
+    <div id="wrapper">
+        <div class="post-text">[postText]</div>
+        <div class="post-image">
+            <img src="[imgSrc]" alt="[imgAlt]">
+        </div>
     </div>
+
+    <!--place for script in the bottom of code-->
+
 
 </div>
 
+<!-- Values replacement (should be implemented on server side) -->
 <script>
-    var font = document.createElement('link');
-    font.setAttribute('href', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
-    font.setAttribute('rel', 'stylesheet');
-
-    document.querySelector('head').appendChild(font);
     var wrapper = document.getElementById('wrapper');
-    console.log(wrapper.innerHTML);
     wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc]', 'Image_Post_02.jpg');
-    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt]', 'Image for post #1');
-    wrapper.innerHTML = wrapper.innerHTML.replace('[postText]', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos harum quae totam? Assumenda et inventore molestias necessitatibus qui, repellat reprehenderit vel.');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt]', 'Image for post #2');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postText]', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias aperiam architecto autem corporis cum deserunt dolores dolorum ducimus eligendi eos error eum expedita explicabo fugiat illo illum impedit, inventore iusto labore laboriosam laborum maiores molestiae molestias neque nesciunt nostrum nulla perferendis porro quasi quo rem repellendus repudiandae sapiente unde veritatis voluptatibus! Accusantium aperiam asperiores atque exercitationem facilis fugiat id ipsa labore maiores molestias nobis optio pariatur, rem tempora unde velit voluptas voluptates! Dolores labore laudantium nemo odio rem. Atque cum dolor doloremque dolorum eligendi excepturi exercitationem expedita fugit hic, in ipsam iure labore laboriosam libero.');
+</script>
+
+<!--this script should be included into response from server (it will work good if text replacement will be done on server side, before loading page in browser)-->
+<script>
+    var ps = new PerfectScrollbar(document.querySelector('.post-text'));
+
+    function initScrollbar() {
+
+        var img = document.querySelector('img');
+        var text = document.querySelector('.post-text');
+        console.log(img.clientHeight);
+        text.style['max-height'] = img.clientHeight + 'px';
+        ps.update();
+
+    }
+
+    window.onresize = initScrollbar;
+    window.onload = initScrollbar;
 </script>
 </body>
 </html>

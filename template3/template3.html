@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Template 1</title>
+</head>
+<body>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    #wrapper {
+        margin: 0 auto;
+        max-width: 460px;
+        padding: 16px;
+        border-radius: 15px;
+        background-color: rgba(3, 103, 188, 0.9);
+    }
+
+    .post-image img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .post-title {
+        text-align: center;
+        font-weight: 700;
+        margin: 10px auto 16px;
+    }
+
+    .post-text {
+        text-align: center;
+        font-size: 16px;
+        color: white;
+    }
+    @media screen and (max-width: 576px) {
+        .post-text {
+            font-size: 12px;
+        }
+    }
+
+</style>
+
+<div id="wrapper">
+    <div class="post-image">
+        <img src="[imgSrc]" alt="[imgAlt]">
+        <img src="[imgSrc]" alt="[imgAlt]">
+        <img src="[imgSrc]" alt="[imgAlt]">
+    </div>
+    <div class="post-title">[postTitle]</div>
+    <div class="post-text">[postText]</div>
+
+</div>
+
+<script src="../libs/jquery-3.3.1.min.js"></script>
+
+<script>
+    var font = document.createElement('link');
+    font.setAttribute('href', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
+    font.setAttribute('rel', 'stylesheet');
+    document.querySelector('head').appendChild(font);
+</script>
+
+<!-- Values replacement (should be implemented on server side) -->
+<script>
+    var wrapper = document.getElementById('wrapper');
+    wrapper.innerHTML = wrapper.innerHTML.replace(/\[imgSrc\]/g, 'Image_Post_03.png');
+    wrapper.innerHTML = wrapper.innerHTML.replace(/\[imgAlt\]/g, 'Image for post #3');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postTitle]', 'Galaxy S9/S9+');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postText]', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos harum quae totam? Assumenda et inventore molestias necessitatibus qui, repellat reprehenderit vel.');
+</script>
+</body>
+</html>
