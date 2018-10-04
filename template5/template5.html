@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Post Template 5</title>
+    <title>Post Template 4</title>
 </head>
 <body>
 
@@ -27,7 +27,7 @@
 
         #wrapper {
             margin: 0 auto;
-            max-width: 750px;
+            max-width: 900px;
             display: flex;
             justify-content: space-between;
             border-radius: 15px;
@@ -35,12 +35,13 @@
         }
 
         .post-item {
-            flex: 0 0 50%;
+            flex: 0 0 33.3%;
             padding: 16px;
+            border-right: 1px solid #4386c6;
         }
 
-        .post-item:first-child {
-            border-right: 1px solid #4386c6;
+        .post-item:last-child {
+            border-right: none;
         }
 
         .post-title {
@@ -90,6 +91,13 @@
             <div class="post-title">[postTitle2]</div>
             <div class="post-text">[postText2]</div>
         </div>
+        <div class="post-item">
+            <div class="post-image">
+                <img src="[imgSrc3]" alt="[imgAlt3]">
+            </div>
+            <div class="post-title">[postTitle3]</div>
+            <div class="post-text">[postText3]</div>
+        </div>
     </div>
 
     <script>
@@ -101,15 +109,20 @@
 <!-- Values replacement (should be implemented on server side) -->
 <script>
     var wrapper = document.getElementById('wrapper');
-    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc1]', 'Image_Post_04-1.png');
-    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt1]', 'Image for post #4-1');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc1]', 'Image_Post_05-1.png');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt1]', 'Image for post #5-1');
     wrapper.innerHTML = wrapper.innerHTML.replace('[postTitle1]', 'Galaxy S9/S9+');
     wrapper.innerHTML = wrapper.innerHTML.replace('[postText1]', 'Introducing the latest Galaxy S9/S9+. Packed with an array of innovative features, like Pro Mode enabling you to manually adjust camera settings so that every shot looks professional');
 
-    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc2]', 'Image_Post_04-2.png');
-    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt2]', 'Image for post #4-2');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc2]', 'Image_Post_05-2.png');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt2]', 'Image for post #5-2');
     wrapper.innerHTML = wrapper.innerHTML.replace('[postTitle2]', 'Galaxy Note8');
     wrapper.innerHTML = wrapper.innerHTML.replace('[postText2]', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos harum quae totam? Assumenda et inventore molestias necessitatibus qui, repellat reprehenderit vel.');
+
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc3]', 'Image_Post_05-3.png');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt3]', 'Image for post #5-3');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postTitle3]', 'Galaxy S9/S9+');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postText3]', 'Introducing the latest Galaxy S9/S9+. Packed with an array of innovative features, like Pro Mode enabling you to manually adjust camera settings so that every shot looks professional');
 </script>
 </body>
 </html>
