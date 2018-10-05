@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Template 6</title>
+</head>
+<body>
+
+<div data-role="post-content">
+    <script>
+        var font = document.createElement('link');
+        font.setAttribute('href', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,700i');
+        font.setAttribute('rel', 'stylesheet');
+        document.querySelector('head').appendChild(font);
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #wrapper {
+            margin: 0 auto;
+            padding: 16px;
+            max-width: 900px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            background-color: rgba(3, 103, 188, 0.9);
+        }
+
+        .post-item--left, .post-item--right {
+            flex: 0 0 25%;
+        }
+
+        .post-item--center {
+            flex: 0 0 50%;
+            padding: 0 10px;
+            margin-top: 40px;
+            font-weight: 300;
+        }
+
+        .post-divider {
+            width: 20%;
+            margin: 10px auto;
+            height: 1px;
+            background-color: white;
+        }
+
+        .post-title {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            margin: 10px auto 16px;
+        }
+
+        .post-image {
+            display: flex;
+        }
+
+        .post-image img {
+            display: block;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .post-text {
+            text-align: center;
+            font-size: 16px;
+            color: white;
+        }
+
+        @media screen and (max-width: 576px) {
+            .post-text {
+                font-size: 12px;
+            }
+        }
+    </style>
+
+    <div id="wrapper">
+        <div class="post-item post-item--left">
+            <div class="post-image">
+                <img src="[imgSrc1]" alt="[imgAlt1]">
+            </div>
+        </div>
+        <div class="post-item post-item--center">
+            <div class="post-title">[postTitle]</div>
+            <div class="post-divider"></div>
+            <div class="post-text">[postText]</div>
+        </div>
+        <div class="post-item post-item--right">
+            <div class="post-image">
+                <img src="[imgSrc2]" alt="[imgAlt2]">
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+</div>
+
+
+<!-- Values replacement (should be implemented on server side) -->
+<script>
+    var wrapper = document.getElementById('wrapper');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc1]', 'Left_Monitor.png');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt1]', 'Image for post #6-1');
+
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postTitle]', 'Active Shield');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postText]', 'Shieldox is an active shield that is always a part of your document, encrypt it and travels with it wherever it goes so you can have peace of mind');
+
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc2]', 'Right_Monitor.png');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt2]', 'Image for post #6-2');
+</script>
+</body>
+</html>
