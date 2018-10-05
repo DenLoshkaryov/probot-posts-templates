@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Template 8</title>
+</head>
+<body>
+
+<div data-role="post-content">
+    <script>
+        var font = document.createElement('link');
+        font.setAttribute('href', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
+        font.setAttribute('rel', 'stylesheet');
+        document.querySelector('head').appendChild(font);
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #wrapper {
+            margin: 0 auto;
+            max-width: 950px;
+            border-radius: 15px;
+            background-color: rgba(3, 103, 188, 0.9);
+            padding: 16px;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+        }
+
+        .post-items {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .post-item {
+            flex: 1 1 50%;
+            min-width: 240px;
+            border-right: 1px solid #4386c6;
+            border-bottom: 1px solid #4386c6;
+            position: relative;
+            padding: 10px 40px 40px 70px;
+        }
+
+        .post-item:nth-child(2), .post-item:nth-child(4) {
+            border-right: none;
+            padding-left: 90px;
+            padding-right: 5px;
+        }
+
+        .post-item:nth-child(3), .post-item:nth-child(4) {
+            padding-top: 25px;
+            padding-bottom: 10px;
+            border-bottom: none;
+        }
+
+        .post-item:nth-child(2) .post-image, .post-item:nth-child(4) .post-image {
+            left: 20px;
+        }
+
+        .post-item:nth-child(3) .post-image, .post-item:nth-child(4) .post-image {
+            top: 45px;
+        }
+
+        .post-title {
+            color: white;
+            font-weight: 700;
+            margin: 10px auto;
+            font-size: 18px;
+        }
+
+        .post-image {
+            text-align: center;
+            position: absolute;
+            width: 60px;
+            top: 30px;
+            left: 0;
+            /*transform: translateX(-100%);*/
+        }
+
+        .post-image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .post-text {
+            font-size: 16px;
+            color: white;
+        }
+
+        @media screen and (max-width: 576px) {
+            .post-text {
+                font-size: 12px;
+            }
+
+            .post-items {
+                flex-flow: column nowrap;
+            }
+        }
+    </style>
+
+    <div id="wrapper">
+        <h1>Use Cases.</h1>
+        <div class="post-items">
+            <div class="post-item">
+                <div class="post-image">
+                    <img src="[imgSrc1]" alt="[imgAlt1]">
+                </div>
+                <div class="post-title">[postTitle1]</div>
+                <div class="post-text">[postText1]</div>
+            </div>
+            <div class="post-item">
+                <div class="post-image">
+                    <img src="[imgSrc2]" alt="[imgAlt2]">
+                </div>
+                <div class="post-title">[postTitle2]</div>
+                <div class="post-text">[postText2]</div>
+            </div>
+            <div class="post-item">
+                <div class="post-image">
+                    <img src="[imgSrc3]" alt="[imgAlt3]">
+                </div>
+                <div class="post-title">[postTitle3]</div>
+                <div class="post-text">[postText3]</div>
+            </div>
+            <div class="post-item">
+                <div class="post-image">
+                    <img src="[imgSrc4]" alt="[imgAlt4]">
+                </div>
+                <div class="post-title">[postTitle4]</div>
+                <div class="post-text">[postText4]</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+    </script>
+</div>
+
+
+<!-- Values replacement (should be implemented on server side) -->
+<script>
+    var wrapper = document.getElementById('wrapper');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc1]', 'Icon_Full_visibility.png');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt1]', 'Image for post #8-1');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postTitle1]', 'Full Visibility and Foresight');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postText1]', 'Allow administrator to view all potential documents\' exposure via the Shieldox Radar - inside and outside of your organization');
+
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc2]', 'Icon_DocInMotionSecurity.png');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt2]', 'Image for post #8-2');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postTitle2]', 'Documents in Motion Security');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postText2]', 'PDP in motion technology, backed by our advanced artificial intelligence, knows exactly when and how to grant access control, through an autonomous that understands, decides and act without');
+
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc3]', 'Icon_Data_Breaches.png');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt3]', 'Image for post #8-3');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postTitle3]', 'Data Breaches Protection');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postText3]', 'Encrypt your documents to protect them from extremal data breaches or inside threats');
+
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc4]', 'Icon_Secures.png');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt4]', 'Image for post #8-4');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postTitle4]', 'Secures Common Platforms');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postText4]', 'Protect your documents when used on the most common platforms both endpoints and with cloud collaboration platforms; such as OneDrive, Google Drive, Dropbox and more.');
+
+</script>
+</body>
+</html>
