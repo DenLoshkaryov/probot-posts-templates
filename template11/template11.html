@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post template 11</title>
+</head>
+<body>
+
+<div data-role="post-content">
+
+    <script>
+        var font = document.createElement('link');
+        font.setAttribute('href', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
+        font.setAttribute('rel', 'stylesheet');
+        document.querySelector('head').appendChild(font);
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #wrapper {
+            margin: 0 auto;
+            max-width: 750px;
+            padding: 16px 16px 0;
+            border-radius: 15px;
+            background-color: rgba(3, 103, 188, 0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .post-image {
+            flex: 0 0 60%;
+            align-self: flex-end;
+        }
+
+        .post-image img {
+            width: 100%;
+            height: auto;
+            position: relative;
+            bottom: -5px;
+        }
+
+        .post-text {
+            text-align: left;
+            font-size: 16px;
+            color: white;
+            flex: 0 0 37%;
+            position: relative;
+            padding-right: 10px;
+            margin-bottom: 16px;
+        }
+        .post-text h1 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        @media screen and (max-width: 576px) {
+            .post-text {
+                font-size: 12px;
+            }
+        }
+    </style>
+
+    <div id="wrapper">
+        <div class="post-image">
+            <img src="[imgSrc]" alt="[imgAlt]">
+        </div>
+        <div class="post-text">
+            <h1>[postHeading]</h1>
+            <p>[postText]</p>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+<!-- Values replacement (should be implemented on server side) -->
+<script>
+    var wrapper = document.getElementById('wrapper');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc]', 'Image_Post_11.png');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt]', 'Image for post #11');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postHeading]', 'Introduction <br/> the new Galaxy A');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postText]', 'Discover a range of phones that effortlessly blend style and revolutionary features. Made from premium materials, water and dust resistant design.');
+</script>
+
+</body>
+</html>
