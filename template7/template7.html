@@ -36,30 +36,29 @@
             background-color: rgba(3, 103, 188, 0.9);
         }
 
-        .post-item--right {
-            flex: 0 0 30%;
+        .post-item--left, .post-item--right {
+            flex: 0 0 25%;
         }
 
-        .post-item--left {
-            flex: 0 1 70%;
+        .post-item--center {
+            flex: 0 0 50%;
             padding: 0 10px;
-            margin: 60px 40px auto 25px;
+            margin-top: 40px;
             font-weight: 300;
         }
 
         .post-divider {
             width: 20%;
-            margin: 10px auto 10px 0;
+            margin: 10px auto;
             height: 1px;
             background-color: white;
         }
 
         .post-title {
-            text-align: left;
+            text-align: center;
             color: white;
             font-size: 24px;
-            margin: 10px 20% 16px 0;
-            max-width: 300px;
+            margin: 10px auto 16px;
         }
 
         .post-image {
@@ -74,7 +73,7 @@
         }
 
         .post-text {
-            text-align: left;
+            text-align: center;
             font-size: 16px;
             color: white;
         }
@@ -83,21 +82,23 @@
             .post-text {
                 font-size: 12px;
             }
-            .post-item--left {
-                margin: auto auto auto 0;
-            }
         }
     </style>
 
     <div id="wrapper">
         <div class="post-item post-item--left">
+            <div class="post-image">
+                <img src="[imgSrc1]" alt="[imgAlt1]">
+            </div>
+        </div>
+        <div class="post-item post-item--center">
             <div class="post-title">[postTitle]</div>
             <div class="post-divider"></div>
             <div class="post-text">[postText]</div>
         </div>
         <div class="post-item post-item--right">
             <div class="post-image">
-                <img src="[imgSrc]" alt="[imgAlt]">
+                <img src="[imgSrc2]" alt="[imgAlt2]">
             </div>
         </div>
     </div>
@@ -111,13 +112,14 @@
 <!-- Values replacement (should be implemented on server side) -->
 <script>
     var wrapper = document.getElementById('wrapper');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc1]', 'Left_Monitor.png');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt1]', 'Image for post #7-1');
 
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postTitle]', 'Active Shield');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[postText]', 'Shieldox is an active shield that is always a part of your document, encrypt it and travels with it wherever it goes so you can have peace of mind');
 
-    wrapper.innerHTML = wrapper.innerHTML.replace('[postTitle]', 'Shieldox Radar creates full document visibility');
-    wrapper.innerHTML = wrapper.innerHTML.replace('[postText]', 'Shieldox Radar gives you a complete picture of the state of your documents within the walls of your company, outside when they are in motion and foresight of the potential risk');
-
-    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc]', 'Right-Monitor.png');
-    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt]', 'Image for post #7');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc2]', 'Right_Monitor.png');
+    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt2]', 'Image for post #7-2');
 </script>
 </body>
 </html>
