@@ -1,0 +1,82 @@
+<div data-role="post-content">
+
+
+    <link rel="stylesheet" href="/libs/scrollbar/perfect-scrollbar.css">
+    <script src="/libs/scrollbar/perfect-scrollbar.min.js"></script>
+    <script>
+        var font = document.createElement('link');
+        font.setAttribute('href', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
+        font.setAttribute('rel', 'stylesheet');
+        document.querySelector('head').appendChild(font);
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #wrapper {
+            margin: 0 auto;
+            max-width: 750px;
+            padding: 16px;
+            border-radius: 15px;
+            background-color: rgba(3, 103, 188, 0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .post-image {
+            flex: 0 0 60%;
+        }
+
+        .post-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .post-text {
+            text-align: left;
+            font-size: 16px;
+            color: white;
+            flex: 0 0 37%;
+            position: relative;
+            padding-right: 10px;
+        }
+
+        @media screen and (max-width: 576px) {
+            .post-text {
+                font-size: 12px;
+            }
+        }
+    </style>
+
+    <div id="wrapper">
+        <div class="post-text">[postText]</div>
+        <div class="post-image">
+            <img src="[imgSrc]" alt="[imgAlt]">
+        </div>
+    </div>
+    <script>
+        var ps = new PerfectScrollbar(document.querySelector('.post-text'));
+
+        function initScrollbar() {
+
+            var img = document.querySelector('img');
+            var text = document.querySelector('.post-text');
+            console.log(img.clientHeight);
+            text.style['max-height'] = img.clientHeight + 'px';
+            ps.update();
+
+        }
+
+        window.onresize = initScrollbar;
+        window.onload = initScrollbar;
+    </script>
+</div>

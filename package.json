@@ -1,0 +1,19 @@
+{
+  "name": "probot-posts-templates",
+  "version": "1.0.0",
+  "description": "Short description how to use temlates on server-side",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@probot:DenLoshkaryov/probot-posts-templates.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "morgan": "^1.9.1"
+  }
+}
