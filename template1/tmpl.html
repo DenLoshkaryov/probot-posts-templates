@@ -7,17 +7,9 @@
     </script>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
+        
+        .tmpl01wrapper {
             font-family: 'Open Sans', sans-serif;
-        }
-
-        #wrapper {
             margin: 0 auto;
             max-width: 750px;
             padding: 16px;
@@ -25,31 +17,33 @@
             background-color: rgba(3, 103, 188, 0.9);
         }
 
-        .post-image img {
+        .tmpl01wrapper * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .tmpl01wrapper .post-image img {
             width: 100%;
         }
 
-        .post-text {
+        .tmpl01wrapper .post-text {
             text-align: center;
             font-size: 16px;
             color: white;
         }
 
         @media screen and (max-width: 576px) {
-            .post-text {
+            .tmpl01wrapper .post-text {
                 font-size: 12px;
             }
         }
     </style>
 
-    <div id="wrapper">
+    <div class="tmpl01wrapper">
         <div class="post-image">
-            <img src="[imgSrc]" alt="[imgAlt]">
+            <img src="[imgSrc]">
         </div>
         <div class="post-text">[postText]</div>
     </div>
-
-    <script>
-
-    </script>
 </div>

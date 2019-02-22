@@ -9,17 +9,15 @@
     <script src="/libs/jquery-3.3.1.min.js"></script>
     <script src="/libs/slider/js/lightslider.js"></script>
     <style>
-        * {
+
+        .tmpl03Wrapper * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
+        .tmpl03wrapper {
             font-family: 'Open Sans', sans-serif;
-        }
-
-        #wrapper {
             margin: 0 auto;
             max-width: 460px;
             padding: 16px;
@@ -27,12 +25,14 @@
             background-color: rgba(3, 103, 188, 0.9);
         }
 
-        .slider-content {
+        
+
+        .tmpl03Wrapper .slider-content {
             margin: 0 25px;
             position: relative;
         }
 
-        .slider-control {
+        .tmpl03Wrapper .slider-control {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -41,52 +41,52 @@
             cursor: pointer;
         }
 
-        .slider-control--left {
-            background-image: url("../assets/Arrow-Left.png");
+        .tmpl03Wrapper .slider-control--left {
+            background-image: url("./assets/Arrow-Left.png");
             left: -25px;
         }
 
-        .slider-control--right {
-            background-image: url("../assets/Arrow_Right.png");
+        .tmpl03Wrapper .slider-control--right {
+            background-image: url("./assets/Arrow_Right.png");
             right: -25px;
         }
 
-        .post-image img {
+        .tmpl03Wrapper .post-image img {
             display: block;
             margin: 0 auto;
             width: 90%;
             /*max-width: 360px;*/
         }
 
-        .post-title {
+        .tmpl03Wrapper .post-title {
             text-align: center;
             color: white;
             font-weight: 700;
             margin: 10px auto 16px;
         }
 
-        .post-text {
+        .tmpl03Wrapper .post-text {
             text-align: center;
             font-size: 16px;
             color: white;
         }
 
         @media screen and (max-width: 576px) {
-            .post-text {
+            .tmpl03Wrapper .post-text {
                 font-size: 12px;
             }
         }
 
     </style>
 
-    <div id="wrapper">
+    <div class="tmpl03wrapper">
         <div class="slider-content">
             <div class="slider-control slider-control--left"></div>
             <div class="slider-control slider-control--right"></div>
             <div class="post-image">
-                <img src="[imgSrc]" alt="[imgAlt]">
-                <img src="[imgSrc]" alt="[imgAlt]">
-                <img src="[imgSrc]" alt="[imgAlt]">
+                <img src="[imgSrc]">
+                <img src="[imgSrc]">
+                <img src="[imgSrc]">
             </div>
         </div>
         <div class="post-title">[postTitle]</div>
@@ -95,15 +95,15 @@
     </div>
 
     <script>
-        var $slider = $('.post-image').lightSlider({
+        var $slider = $('.tmpl03Wrapper .post-image').lightSlider({
             item: 1,
             pager: false,
             controls: false
         });
-        $('.slider-control--left').click(function () {
+        $('.tmpl03Wrapper .slider-control--left').click(function () {
             $slider.goToPrevSlide();
         });
-        $('.slider-control--right').click(function () {
+        $('.tmpl03Wrapper .slider-control--right').click(function () {
             $slider.goToNextSlide();
         })
     </script>

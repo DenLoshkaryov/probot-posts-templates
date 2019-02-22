@@ -15,17 +15,14 @@
     </script>
 
     <style>
-        * {
+        .tmpl08wrapper * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
+        .tmpl08wrapper {
             font-family: 'Open Sans', sans-serif;
-        }
-
-        #wrapper {
             margin: 0 auto;
             padding: 16px;
             max-width: 900px;
@@ -36,25 +33,25 @@
             background-color: rgba(3, 103, 188, 0.9);
         }
 
-        .post-item--right {
+        .tmpl08wrapper .post-item--right {
             flex: 0 0 30%;
         }
 
-        .post-item--left {
+        .tmpl08wrapper .post-item--left {
             flex: 0 1 70%;
             padding: 0 10px;
             margin: 60px 40px auto 25px;
             font-weight: 300;
         }
 
-        .post-divider {
+        .tmpl08wrapper .post-divider {
             width: 20%;
             margin: 10px auto 10px 0;
             height: 1px;
             background-color: white;
         }
 
-        .post-title {
+        .tmpl08wrapper .post-title {
             text-align: left;
             color: white;
             font-size: 24px;
@@ -62,34 +59,34 @@
             max-width: 300px;
         }
 
-        .post-image {
+        .tmpl08wrapper .post-image {
             display: flex;
         }
 
-        .post-image img {
+        .tmpl08wrapper .post-image img {
             display: block;
             margin: auto;
             max-width: 100%;
             max-height: 100%;
         }
 
-        .post-text {
+        .tmpl08wrapper .post-text {
             text-align: left;
             font-size: 16px;
             color: white;
         }
 
         @media screen and (max-width: 576px) {
-            .post-text {
+            .tmpl08wrapper .post-text {
                 font-size: 12px;
             }
-            .post-item--left {
+            .tmpl08wrapper .post-item--left {
                 margin: auto auto auto 0;
             }
         }
     </style>
 
-    <div id="wrapper">
+    <div class="tmpl08wrapper">
         <div class="post-item post-item--left">
             <div class="post-title">[postTitle]</div>
             <div class="post-divider"></div>
@@ -97,7 +94,7 @@
         </div>
         <div class="post-item post-item--right">
             <div class="post-image">
-                <img src="[imgSrc]" alt="[imgAlt]">
+                <img src="[imgSrc]">
             </div>
         </div>
     </div>

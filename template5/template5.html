@@ -15,17 +15,14 @@
     </script>
 
     <style>
-        * {
+        .tmpl05wrapper * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
+        .tmpl05wrapper {
             font-family: 'Open Sans', sans-serif;
-        }
-
-        #wrapper {
             margin: 0 auto;
             max-width: 900px;
             display: flex;
@@ -34,66 +31,66 @@
             background-color: rgba(3, 103, 188, 0.9);
         }
 
-        .post-item {
+        .tmpl05wrapper .post-item {
             flex: 0 0 33.3%;
             padding: 16px;
             border-right: 1px solid #4386c6;
         }
 
-        .post-item:last-child {
+        .tmpl05wrapper .post-item:last-child {
             border-right: none;
         }
 
-        .post-title {
+        .tmpl05wrapper .post-title {
             text-align: center;
             color: white;
             font-weight: 700;
             margin: 10px auto 16px;
         }
 
-        .post-image {
+        .tmpl05wrapper .post-image {
             text-align: center;
             margin-bottom: 10px;
             max-height: 350px;
             height: 50vw;
         }
 
-        .post-image img {
+        .tmpl05wrapper .post-image img {
             max-width: 100%;
             max-height: 100%;
         }
 
-        .post-text {
+        .tmpl05wrapper .post-text {
             text-align: center;
             font-size: 16px;
             color: white;
         }
 
         @media screen and (max-width: 576px) {
-            .post-text {
+            .tmpl05wrapper .post-text {
                 font-size: 12px;
             }
         }
     </style>
 
-    <div id="wrapper">
+    <div class="tmpl05wrapper">
         <div class="post-item">
             <div class="post-image">
-                <img src="[imgSrc1]" alt="[imgAlt1]">
+                <img src="[imgSrc1]">
             </div>
             <div class="post-title">[postTitle1]</div>
             <div class="post-text">[postText1]</div>
         </div>
         <div class="post-item">
             <div class="post-image">
-                <img src="[imgSrc2]" alt="[imgAlt2]">
+                <img src="[imgSrc2]">
             </div>
             <div class="post-title">[postTitle2]</div>
             <div class="post-text">[postText2]</div>
         </div>
         <div class="post-item">
             <div class="post-image">
-                <img src="[imgSrc3]" alt="[imgAlt3]">
+                <img src="[imgSrc3]">
             </div>
             <div class="post-title">[postTitle3]</div>
             <div class="post-text">[postText3]</div>

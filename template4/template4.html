@@ -1,115 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Post Template 5</title>
 </head>
+
 <body>
 
-<div data-role="post-content">
-    <script>
-        var font = document.createElement('link');
-        font.setAttribute('href', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
-        font.setAttribute('rel', 'stylesheet');
-        document.querySelector('head').appendChild(font);
-    </script>
+    <div data-role="post-content">
+        <script>
+            var font = document.createElement('link');
+            font.setAttribute('href', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
+            font.setAttribute('rel', 'stylesheet');
+            document.querySelector('head').appendChild(font);
+        </script>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        #wrapper {
-            margin: 0 auto;
-            max-width: 750px;
-            display: flex;
-            justify-content: space-between;
-            border-radius: 15px;
-            background-color: rgba(3, 103, 188, 0.9);
-        }
-
-        .post-item {
-            flex: 0 0 50%;
-            padding: 16px;
-        }
-
-        .post-item:first-child {
-            border-right: 1px solid #4386c6;
-        }
-
-        .post-title {
-            text-align: center;
-            color: white;
-            font-weight: 700;
-            margin: 10px auto 16px;
-        }
-
-        .post-image {
-            text-align: center;
-            margin-bottom: 10px;
-            max-height: 350px;
-            height: 50vw;
-        }
-
-        .post-image img {
-            max-width: 100%;
-            max-height: 100%;
-        }
-
-        .post-text {
-            text-align: center;
-            font-size: 16px;
-            color: white;
-        }
-
-        @media screen and (max-width: 576px) {
-            .post-text {
-                font-size: 12px;
+        <style>
+            .tmpl04wrapper * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
-        }
-    </style>
 
-    <div id="wrapper">
-        <div class="post-item">
-            <div class="post-image">
-                <img src="[imgSrc1]" alt="[imgAlt1]">
+            .tmpl04wrapper {
+                font-family: 'Open Sans', sans-serif;
+                margin: 0 auto;
+                max-width: 750px;
+                display: flex;
+                justify-content: space-between;
+                border-radius: 15px;
+                background-color: rgba(3, 103, 188, 0.9);
+            }
+
+            .tmpl04wrapper .post-item {
+                flex: 0 0 50%;
+                padding: 16px;
+            }
+
+            .tmpl04wrapper .post-item:first-child {
+                border-right: 1px solid #4386c6;
+            }
+
+            .tmpl04wrapper .post-title {
+                text-align: center;
+                color: white;
+                font-weight: 700;
+                margin: 10px auto 16px;
+            }
+
+            .tmpl04wrapper .post-image {
+                text-align: center;
+                margin-bottom: 10px;
+                max-height: 350px;
+                height: 50vw;
+            }
+
+            .tmpl04wrapper .post-image img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            .tmpl04wrapper .post-text {
+                text-align: center;
+                font-size: 16px;
+                color: white;
+            }
+
+            @media screen and (max-width: 576px) {
+                .tmpl04wrapper .post-text {
+                    font-size: 12px;
+                }
+            }
+        </style>
+
+        <div class="tmpl04wrapper">
+            <div class="post-item">
+                <div class="post-image">
+                    <img src="[imgSrc1]">
+                </div>
+                <div class="post-title">[postTitle1]</div>
+                <div class="post-text">[postText1]</div>
             </div>
-            <div class="post-title">[postTitle1]</div>
-            <div class="post-text">[postText1]</div>
-        </div>
-        <div class="post-item">
-            <div class="post-image">
-                <img src="[imgSrc2]" alt="[imgAlt2]">
+            <div class="post-item">
+                <div class="post-image">
+                    <img src="[imgSrc2]">
+                </div>
+                <div class="post-title">[postTitle2]</div>
+                <div class="post-text">[postText2]</div>
             </div>
-            <div class="post-title">[postTitle2]</div>
-            <div class="post-text">[postText2]</div>
         </div>
+
+        <script>
+
+        </script>
     </div>
 
+
+    <!-- Values replacement (should be implemented on server side) -->
     <script>
+        var wrapper = document.getElementById('wrapper');
+        wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc1]', 'Image_Post_04-1.png');
+        wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt1]', 'Image for post #4-1');
+        wrapper.innerHTML = wrapper.innerHTML.replace('[postTitle1]', 'Galaxy S9/S9+');
+        wrapper.innerHTML = wrapper.innerHTML.replace('[postText1]',
+            'Introducing the latest Galaxy S9/S9+. Packed with an array of innovative features, like Pro Mode enabling you to manually adjust camera settings so that every shot looks professional'
+        );
 
+        wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc2]', 'Image_Post_04-2.png');
+        wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt2]', 'Image for post #4-2');
+        wrapper.innerHTML = wrapper.innerHTML.replace('[postTitle2]', 'Galaxy Note8');
+        wrapper.innerHTML = wrapper.innerHTML.replace('[postText2]',
+            'More screens means more space to do dreat things. Go big with the Galaxy Note8\'s 6.3" screen. It\'s the largest ever screen on a Note device and it still files easily in'
+        );
     </script>
-</div>
-
-
-<!-- Values replacement (should be implemented on server side) -->
-<script>
-    var wrapper = document.getElementById('wrapper');
-    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc1]', 'Image_Post_04-1.png');
-    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt1]', 'Image for post #4-1');
-    wrapper.innerHTML = wrapper.innerHTML.replace('[postTitle1]', 'Galaxy S9/S9+');
-    wrapper.innerHTML = wrapper.innerHTML.replace('[postText1]', 'Introducing the latest Galaxy S9/S9+. Packed with an array of innovative features, like Pro Mode enabling you to manually adjust camera settings so that every shot looks professional');
-
-    wrapper.innerHTML = wrapper.innerHTML.replace('[imgSrc2]', 'Image_Post_04-2.png');
-    wrapper.innerHTML = wrapper.innerHTML.replace('[imgAlt2]', 'Image for post #4-2');
-    wrapper.innerHTML = wrapper.innerHTML.replace('[postTitle2]', 'Galaxy Note8');
-    wrapper.innerHTML = wrapper.innerHTML.replace('[postText2]', 'More screens means more space to do dreat things. Go big with the Galaxy Note8\'s 6.3" screen. It\'s the largest ever screen on a Note device and it still files easily in');
-</script>
 </body>
+
 </html>

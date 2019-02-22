@@ -15,17 +15,14 @@
     </script>
 
     <style>
-        * {
+        .tmpl07wrapper * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
+        .tmpl07wrapper {
             font-family: 'Open Sans', sans-serif;
-        }
-
-        #wrapper {
             margin: 0 auto;
             padding: 16px;
             max-width: 900px;
@@ -36,59 +33,59 @@
             background-color: rgba(3, 103, 188, 0.9);
         }
 
-        .post-item--left, .post-item--right {
+        .tmpl07wrapper .post-item--left, .post-item--right {
             flex: 0 0 25%;
         }
 
-        .post-item--center {
+        .tmpl07wrapper .post-item--center {
             flex: 0 0 50%;
             padding: 0 10px;
             margin-top: 40px;
             font-weight: 300;
         }
 
-        .post-divider {
+        .tmpl07wrapper .post-divider {
             width: 20%;
             margin: 10px auto;
             height: 1px;
             background-color: white;
         }
 
-        .post-title {
+        .tmpl07wrapper .post-title {
             text-align: center;
             color: white;
             font-size: 24px;
             margin: 10px auto 16px;
         }
 
-        .post-image {
+        .tmpl07wrapper .post-image {
             display: flex;
         }
 
-        .post-image img {
+        .tmpl07wrapper .post-image img {
             display: block;
             margin: auto;
             max-width: 100%;
             max-height: 100%;
         }
 
-        .post-text {
+        .tmpl07wrapper .post-text {
             text-align: center;
             font-size: 16px;
             color: white;
         }
 
         @media screen and (max-width: 576px) {
-            .post-text {
+            .tmpl07wrapper .post-text {
                 font-size: 12px;
             }
         }
     </style>
 
-    <div id="wrapper">
+    <div class="tmpl07wrapper">
         <div class="post-item post-item--left">
             <div class="post-image">
-                <img src="[imgSrc1]" alt="[imgAlt1]">
+                <img src="[imgSrc1]">
             </div>
         </div>
         <div class="post-item post-item--center">
@@ -98,7 +95,7 @@
         </div>
         <div class="post-item post-item--right">
             <div class="post-image">
-                <img src="[imgSrc2]" alt="[imgAlt2]">
+                <img src="[imgSrc2]">
             </div>
         </div>
     </div>

@@ -11,17 +11,14 @@
     </script>
 
     <style>
-        * {
+       .tmpl02wrapper * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
+        .tmpl02wrapper {
             font-family: 'Open Sans', sans-serif;
-        }
-
-        #wrapper {
             margin: 0 auto;
             max-width: 750px;
             padding: 16px;
@@ -32,16 +29,16 @@
             align-items: center;
         }
 
-        .post-image {
+        .tmpl02wrapper .post-image {
             flex: 0 0 60%;
         }
 
-        .post-image img {
+        .tmpl02wrapper .post-image img {
             width: 100%;
             height: auto;
         }
 
-        .post-text {
+        .tmpl02wrapper .post-text {
             text-align: left;
             font-size: 16px;
             color: white;
@@ -51,20 +48,20 @@
         }
 
         @media screen and (max-width: 576px) {
-            .post-text {
+            .tmpl02wrapper .post-text {
                 font-size: 12px;
             }
         }
     </style>
 
-    <div id="wrapper">
+    <div class="tmpl02wrapper">
         <div class="post-text">[postText]</div>
         <div class="post-image">
             <img src="[imgSrc]" alt="[imgAlt]">
         </div>
     </div>
     <script>
-        var ps = new PerfectScrollbar(document.querySelector('.post-text'));
+        var ps = new PerfectScrollbar(document.querySelector('.tmpl02wrapper .post-text'));
 
         function initScrollbar() {
 
